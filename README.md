@@ -19,7 +19,7 @@ handlers(parameters);
 struct handler1
 {
     template<typename Fn>
-    bool next(parameters, Fn next)
+    bool operator()(parameters, Fn next)
     {
         bool r = true;
         // do whatever...
