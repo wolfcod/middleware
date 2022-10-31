@@ -92,5 +92,5 @@ bool caller(??, Fn next, Args... args)
 }
 ```
 
-Now I'm stuck on this problem.. how define a <caller> template function which needs two set of variadic template.. where is impossible to identify where the second set (the next sequence) starts.
+Now I'm stuck on this problem.. how define a <caller> template function which needs two set of variadic template parameters with a compiler which cannot identify where the first set end, what is the "next" and eventually the nexts...
 In case I'll figure out there will be an update.
