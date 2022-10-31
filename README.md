@@ -74,8 +74,8 @@ According to this example, we can involve the following elements in the request:
 - JSONHandler: extract the response from a JSON message and put back into reponse
 
 ## How doesn't work :(
-This approach require for each component of this middleware, an object which can be created to consume a parameter..
-
+The previous approach require an object T for each step.  
+Let's imagine this different approach:
 ```cpp
 template<typename Fn, typename... Args>
 bool handler1(int &i, Fn next, Args... args)
