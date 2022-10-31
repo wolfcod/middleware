@@ -72,3 +72,25 @@ According to this example, we can involve the following elements in the request:
 - authHandler: Validate the response from the server
 - base64Handler: Decode the message from base64
 - JSONHandler: extract the response from a JSON message and put back into reponse
+
+## How doesn't work :(
+This approach require for each component of this middleware, an object which can be created to consume a parameter..
+
+```cpp
+template<typename Fn, typename... Args>
+bool handler1(int &i, Fn next, Args... args)
+{
+   std::cout << "In handler1 i equals to " << i << std::endl;
+   return next(i+1, args...);
+}
+
+template<typename Fn, typename.... Args>
+bool caller(??, Fn next, Args... args)
+{
+   std::cout << "Calling a sequence of functions... " << std::endl;
+   return next(??, args...);
+}
+```
+
+Now I'm stuck on this problem.. how define a <caller> template function which needs two set of variadic template.. where is impossible to identify where the second set (the next sequence) starts.
+In case I'll figure out there will be an update.
